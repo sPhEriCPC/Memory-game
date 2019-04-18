@@ -1,0 +1,46 @@
+Memory game brainstorming:
+Flipping over cards then matching images 
+Progressively gets more cards in the array 
+Computer flips random cards, then user must click them 
+Progressively gets faster flips 
+More cards flipped at once
+Ball hidden under 1 cup game 
+Harder with more cups	
+Various levels or difficulties for the user to select
+The use of GUI to enhance presentation of the game
+The incorporation of math equations for higher difficulty 
+Re-typing a sentence typed on the screen
+Sentences get longer/ more difficult
+Re-typing numbers on the screen 
+Numbers get longer
+
+Additional ideas:
+Read and write to a text file to save high scores 
+
+Pseudocode for Computer flips random cards, then user must click them
+Set array of cards to 4x4 with different colours on each side, and a GO button 
+Give each card a corresponding number between 0-15 
+Randomly generate 3 numbers between 0-15
+Flip the corresponding cards and leave on screen for 1.5 seconds 
+Get user to click on the cards that were flipped over, and click GO when done
+Check if user got correct
+If correct: user gets 1 point (or more depending on difficulty)
+	User moves on to next level
+If incorrect: end game 
+
+Ways to make more difficult:
+More cards in the array 
+More cards flipped (generate more random numbers) 
+Flip the cards for a shorter period of times 
+
+Pseudocode for Re-typing numbers on the screen 
+Set 1 text box, 1 text label, and 1 GO button on the screen
+Randomly generate a string of digits to the text label 
+Flash the digits on the screen for 1 second 
+Have the user type try to type in the correct number, then press GO
+If correct: user gets points depending on difficulty 
+User moves onto next level 
+If incorrect: game ends 
+
+Ways to make more difficult:
+Have a longer string of digits for the user to guess 
