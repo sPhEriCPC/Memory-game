@@ -1,0 +1,17 @@
+// method for generating a random number, enter the #of digits as parameter
+// remember: import java.util.Random;
+    
+    public int numGenerator (int numOfDigits ){
+        Random random = new Random();
+        int numToGuess= random.nextInt(9)+1;
+        for (int i=1;i<numOfDigits;i++){
+        numToGuess= numToGuess*10+random.nextInt(10);
+    }
+        return numToGuess;
+    }
+    
+// method to check if guess is correct, parameters are the correct answer and the user guess
+        
+        public boolean checkInt (int guess, int answer){
+        return guess==answer;
+    }
