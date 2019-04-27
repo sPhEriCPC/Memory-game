@@ -27,17 +27,108 @@ public class Leaderboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        leaderLabel = new javax.swing.JLabel();
+        name1Label = new javax.swing.JLabel();
+        name2Label = new javax.swing.JLabel();
+        name3Label = new javax.swing.JLabel();
+        name4Label = new javax.swing.JLabel();
+        name5Label = new javax.swing.JLabel();
+        score1lLabel = new javax.swing.JLabel();
+        score2lLabel = new javax.swing.JLabel();
+        score3lLabel = new javax.swing.JLabel();
+        score4lLabel = new javax.swing.JLabel();
+        score5lLabel = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(480, 335));
+
+        leaderLabel.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        leaderLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        leaderLabel.setText("Leaderboard");
+        leaderLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        name1Label.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        name1Label.setText("1.");
+
+        name2Label.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        name2Label.setText("2.");
+
+        name3Label.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        name3Label.setText("3.");
+
+        name4Label.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        name4Label.setText("4.");
+
+        name5Label.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        name5Label.setText("5.");
+
+        score1lLabel.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        score1lLabel.setText(".");
+
+        score2lLabel.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        score2lLabel.setText(".");
+
+        score3lLabel.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        score3lLabel.setText(".");
+
+        score4lLabel.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        score4lLabel.setText(".");
+
+        score5lLabel.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        score5lLabel.setText(".");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(leaderLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(name1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(66, 66, 66)
+                        .addComponent(score1lLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(name2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(name3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(name4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(name5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(66, 66, 66)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(score2lLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(score3lLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(score4lLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(score5lLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(leaderLabel)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(name1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(score1lLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(score2lLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(name2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(score3lLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(name3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(score4lLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(name4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(score5lLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(name5Label, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         pack();
@@ -79,5 +170,16 @@ public class Leaderboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel leaderLabel;
+    private javax.swing.JLabel name1Label;
+    private javax.swing.JLabel name2Label;
+    private javax.swing.JLabel name3Label;
+    private javax.swing.JLabel name4Label;
+    private javax.swing.JLabel name5Label;
+    private javax.swing.JLabel score1lLabel;
+    private javax.swing.JLabel score2lLabel;
+    private javax.swing.JLabel score3lLabel;
+    private javax.swing.JLabel score4lLabel;
+    private javax.swing.JLabel score5lLabel;
     // End of variables declaration//GEN-END:variables
 }

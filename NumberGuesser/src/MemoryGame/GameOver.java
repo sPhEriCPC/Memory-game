@@ -30,7 +30,6 @@ public class GameOver extends javax.swing.JFrame {
         gameOverLabel = new javax.swing.JLabel();
         finalScoreLabel = new javax.swing.JLabel();
         gameOverExitButton = new javax.swing.JButton();
-        scoreDisplayLabel = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
@@ -59,6 +58,11 @@ public class GameOver extends javax.swing.JFrame {
         viewLeaderboardButton.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         viewLeaderboardButton.setText("View Leaders");
         viewLeaderboardButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        viewLeaderboardButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewLeaderboardButtonActionPerformed(evt);
+            }
+        });
 
         GameOverInfo.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         GameOverInfo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -75,12 +79,12 @@ public class GameOver extends javax.swing.JFrame {
 
         gameOverLabel.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         gameOverLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        gameOverLabel.setText("Game over. The correct number was: ");
+        gameOverLabel.setText("Game over.");
         gameOverLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         finalScoreLabel.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         finalScoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        finalScoreLabel.setText("Final Score: "+ NumberGuesser.scoreSaver);
+        finalScoreLabel.setText(".");
 
         gameOverExitButton.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         gameOverExitButton.setText("EXIT");
@@ -91,8 +95,6 @@ public class GameOver extends javax.swing.JFrame {
             }
         });
 
-        scoreDisplayLabel.setText(NumberGuesser.scoreSaver);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -102,6 +104,9 @@ public class GameOver extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(128, 128, 128)
+                                .addComponent(username_txtbox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(layout.createSequentialGroup()
                                     .addContainerGap()
@@ -116,20 +121,13 @@ public class GameOver extends javax.swing.JFrame {
                                     .addContainerGap()
                                     .addComponent(GameOverInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(176, 176, 176)
-                                .addComponent(finalScoreLabel)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addComponent(username_txtbox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(scoreDisplayLabel)
-                        .addGap(50, 50, 50)))
+                                .addGap(29, 29, 29)
+                                .addComponent(gameOverLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(109, 109, 109)
+                                .addComponent(finalScoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 72, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(gameOverLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,12 +137,9 @@ public class GameOver extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(finalScoreLabel)
                 .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(username_txtbox, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(scoreDisplayLabel))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(username_txtbox, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(GameOverInfo)
                 .addGap(18, 18, 18)
@@ -192,6 +187,13 @@ public class GameOver extends javax.swing.JFrame {
         GameOverInfo.setText("Your score will not be saved.");
     }//GEN-LAST:event_noSaveButtonActionPerformed
 
+    private void viewLeaderboardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewLeaderboardButtonActionPerformed
+        setVisible(false);
+        dispose();
+        Leaderboard w= new Leaderboard();
+        w.setVisible(true);
+    }//GEN-LAST:event_viewLeaderboardButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -229,14 +231,13 @@ public class GameOver extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel GameOverInfo;
-    public javax.swing.JLabel finalScoreLabel;
+    public static javax.swing.JLabel finalScoreLabel;
     private javax.swing.JButton gameOverExitButton;
-    private javax.swing.JLabel gameOverLabel;
+    public static javax.swing.JLabel gameOverLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton noSaveButton;
     private javax.swing.JButton saveButton;
-    public javax.swing.JLabel scoreDisplayLabel;
     private javax.swing.JTextField username_txtbox;
     private javax.swing.JButton viewLeaderboardButton;
     // End of variables declaration//GEN-END:variables

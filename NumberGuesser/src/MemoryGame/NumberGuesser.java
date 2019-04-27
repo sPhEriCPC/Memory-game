@@ -5,9 +5,8 @@ import javax.swing.Timer;
 
 public class NumberGuesser extends javax.swing.JFrame  {
     
+    static String scoreSaver;
     Memory game1 = new Memory(0,false,0,0,1);
-    String scoreSaver= "";
-    String finalNum= "";
     GameOver goToEnd= new GameOver();
     
     public NumberGuesser() {
@@ -158,7 +157,8 @@ public class NumberGuesser extends javax.swing.JFrame  {
                 scoreLabel.setText("Final Score: "+Integer.toString(game1.score));
                 goButton.setEnabled(false);
                 scoreSaver= Integer.toString(game1.score);
-                finalNum= Integer.toString(game1.currentNum);
+                GameOver.finalScoreLabel.setText("Final Score: "+Integer.toString(game1.score));
+                GameOver.gameOverLabel.setText("Game Over! The correct number was: "+Integer.toString(game1.currentNum ));
                 setVisible(false);
                 dispose();
                 goToEnd.setVisible(true);
@@ -170,6 +170,9 @@ public class NumberGuesser extends javax.swing.JFrame  {
     }//GEN-LAST:event_goButtonActionPerformed
 
     private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
+        scoreSaver= Integer.toString(game1.score);
+        GameOver.finalScoreLabel.setText("Final Score: "+Integer.toString(game1.score));
+        GameOver.gameOverLabel.setText("Game Over! The correct number was: "+Integer.toString(game1.currentNum));
         setVisible(false);
         dispose();
         goToEnd.setVisible(true);
