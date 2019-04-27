@@ -1,0 +1,38 @@
+copied the pseudocode form the doc 
+
+Packages to import:
+	Java.util.Random;
+	Java.io.BufferedWriter;
+	Java.io.FileWriter;
+
+
+
+Create object with attributes score, number to guess, current guess, level
+
+// method for a random number generator 
+Have # of digits as parameter 
+Number to guess= random digit between 1 and 9
+For loop (repeat once per level)
+		Number to guess= number to guess*10 // will push the random digit back 1 place 
+		Number to guess= number to guess + random digit between 0 and 9
+
+
+// when the “new number” button is pressed 
+	Generate a new random number
+	Store that number as the number to guess attribute of the object 
+	Set number label to the random number
+	Set a timer for 1 second (maybe longer?) 
+	Set number label to null after timer 
+
+
+// when “go button” is pressed 
+	Take user input from text box and convert to int 
+	Store that int as the guess attribute of the object
+	Check if the guess and the number to guess are equal 
+	If correct 
+		Add 1 to score and level 
+	If incorrect 
+		End game
+		Send user to the end of game screen
+
+** use the same file writer stuff as the login project
